@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnsgnjqneo4pg"]
+
+[ext_resource type="Texture2D" uid="uid://b5xnhveulo1cn" path="res://Graphics/Sprites/Turret.png" id="1_brla1"]
+[ext_resource type="Script" uid="uid://cc4jhm1asdxlp" path="res://Scripts/turret.gd" id="1_hfhj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brla1"]
+size = Vector2(12, 6)
+
+[node name="Turret" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_hfhj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_brla1")
+
+[node name="Body_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_brla1")

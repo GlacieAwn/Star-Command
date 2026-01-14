@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdg7klemld61y"]
+
+[ext_resource type="Texture2D" uid="uid://cqs4vq46lh5lp" path="res://Graphics/Backgrounds/main_bg.png" id="1_yijg0"]
+[ext_resource type="PackedScene" uid="uid://bnsgnjqneo4pg" path="res://Objects/Turret.tscn" id="2_r5ka5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(128, 120)
+texture = ExtResource("1_yijg0")
+
+[node name="Turret" parent="." instance=ExtResource("2_r5ka5")]
+position = Vector2(138, 227)
