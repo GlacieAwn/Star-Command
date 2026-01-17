@@ -6,13 +6,14 @@ extends CharacterBody2D
 @onready var bullet_instance: PackedScene = preload("res://Objects/Bullet.tscn")
 
 var cooldown = 0
+
 func _physics_process(delta: float) -> void:
 	var input_direction = Input.get_axis("Move_Left", "Move_Right")
 	velocity.x = input_direction * speed
 
 	move_and_slide()
 	position.x = wrapf(position.x, 0, screen_size.x)
-	print(cooldown)
+	# print(cooldown)
 	
 	if cooldown > 0:
 		cooldown -= 1
