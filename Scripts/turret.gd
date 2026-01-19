@@ -22,6 +22,6 @@ func _physics_process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("Shoot") and cooldown == 0:
 		var bullet = bullet_instance.instantiate()
-		owner.add_child(bullet)
+		get_parent().add_child(bullet)
 		bullet.transform = global_transform
 		cooldown = 50

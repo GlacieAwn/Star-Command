@@ -5,5 +5,5 @@ extends Area2D
 
 
 func _process(delta: float) -> void:
-    $AnimatedSprite2D.play("default")
-    position.y += speed * delta
+	$AnimatedSprite2D.play("default")
+	position.y += speed * delta
