@@ -21,7 +21,7 @@ func spawn_asteroids() -> void:
 		return
 	
 	var asteroid = asteroid_instance.instantiate()
-	asteroid.position.x = randf_range(0, 255)
+	asteroid.position.x = randf_range(0 + 16, 255 - 16)
 	asteroid.position.y = -50
 	
 	add_child(asteroid)

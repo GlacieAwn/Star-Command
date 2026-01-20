@@ -7,6 +7,9 @@ extends CharacterBody2D
 
 var cooldown = 0
 
+func _ready() -> void:
+	Global.player = self
+
 func _physics_process(_delta: float) -> void:
 	var input_direction = Input.get_axis("Move_Left", "Move_Right")
 	velocity.x = input_direction * speed
