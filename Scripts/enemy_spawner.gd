@@ -23,12 +23,10 @@ func spawn_asteroids() -> void:
 	var asteroid = asteroid_instance.instantiate()
 	asteroid.position.x = randf_range(0 + 16, 255 - 16)
 	asteroid.position.y = -50
-	
-	add_child(asteroid)
+	get_owner().add_child(asteroid)
 
-	print(asteroid.position)
+	# print(asteroid.position)a
 
 func _process(_delta: float) -> void:
 	# print("Asteroid timer: %f", asteroid_timer.time_left)
-	randomize()
 	pass

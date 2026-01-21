@@ -14,7 +14,7 @@ packet_sequence = SubResource("OggPacketSequence_ftqb4")
 loop = true
 loop_offset = 13.33
 
-[node name="Node2D" type="Node2D"]
+[node name="Gameplay" type="Node2D"]
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(128, 120)
