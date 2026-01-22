@@ -5,7 +5,8 @@ var is_destroyed: bool = false
 var explosion_animation: PackedScene = preload("res://Objects/Effects/Explosion.tscn")
 
 func _ready() -> void:
-	Global.asteroid = self
+	#Global.asteroid = self
+	pass
 
 func _process(delta: float) -> void:
 	position.y += speed * delta

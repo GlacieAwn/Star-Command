@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		# Global.asteroid.is_destroyed = true
-		Global.asteroid.Death()
+		if body.has_method("Death"):
+			body.Death()
 		self.queue_free()
 		Global.player.cooldown = 0
