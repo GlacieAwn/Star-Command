@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bdg7klemld61y"]
+[gd_scene format=4 uid="uid://bdg7klemld61y"]
 
 [ext_resource type="Texture2D" uid="uid://cqs4vq46lh5lp" path="res://Graphics/Backgrounds/main_bg.png" id="1_yijg0"]
 [ext_resource type="PackedScene" uid="uid://bnsgnjqneo4pg" path="res://Objects/Turret.tscn" id="2_r5ka5"]
@@ -11,20 +11,25 @@ sampling_rate = 48000.0
 
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_tdndw"]
 packet_sequence = SubResource("OggPacketSequence_ftqb4")
+tags = {
+"comm": " 00000000 00000210 00000A90 00000000003102E0 00000000 00146220 00000000 00000000 00000000 00000000 00000000 00000000",
+"comments": " 00000000 00000210 00000A90 00000000003102E0 00000000 00146220 00000000 00000000 00000000 00000000 00000000 00000000"
+}
 loop = true
 loop_offset = 13.33
 
-[node name="Gameplay" type="Node2D"]
+[node name="Gameplay" type="Node2D" unique_id=699171550]
 
-[node name="BG" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="." unique_id=550241006]
 position = Vector2(128, 120)
 texture = ExtResource("1_yijg0")
 
-[node name="Turret" parent="." instance=ExtResource("2_r5ka5")]
+[node name="Turret" parent="." unique_id=1169441673 instance=ExtResource("2_r5ka5")]
 position = Vector2(127, 227)
+up_direction = Vector2(1, 0)
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_tdndw")]
+[node name="EnemySpawner" parent="." unique_id=317792479 instance=ExtResource("3_tdndw")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1460209010]
 stream = SubResource("AudioStreamOggVorbis_tdndw")
 parameters/looping = true
