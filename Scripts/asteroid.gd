@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var speed = 50
+@export var speed = 30
 var is_destroyed: bool = false
 var explosion_animation: PackedScene = preload("res://Objects/Effects/Explosion.tscn")
 

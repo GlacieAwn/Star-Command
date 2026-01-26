@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1nlum2w2qyij"]
+[gd_scene format=3 uid="uid://b1nlum2w2qyij"]
 
 [ext_resource type="Script" uid="uid://coy7fg7tpuc6a" path="res://Scripts/bullet.gd" id="1_ljs67"]
 [ext_resource type="Texture2D" uid="uid://btyqj83ynw2xu" path="res://Graphics/Sprites/bullet(thin).png" id="2_ljs67"]
+[ext_resource type="Texture2D" uid="uid://dwfe1vir31rh2" path="res://Graphics/Sprites/bullet_DMG..png" id="3_2ap01"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ap01"]
 atlas = ExtResource("2_ljs67")
@@ -42,14 +43,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu4m3"]
 size = Vector2(4, 8)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" unique_id=1857439715]
 script = ExtResource("1_ljs67")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1004818041]
+visible = false
 sprite_frames = SubResource("SpriteFrames_e3lsw")
 frame_progress = 0.356277
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=778944874]
+texture = ExtResource("3_2ap01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=767701008]
 shape = SubResource("RectangleShape2D_hu4m3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

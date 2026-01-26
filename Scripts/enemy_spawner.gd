@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var asteroid_timer_rate:float = 2
+@export var asteroid_timer_rate:float = 1.5
 @onready var asteroid_instance = preload("res://Objects/Asteroid.tscn")
 @onready var screen_size = get_viewport_rect().size
 
@@ -21,7 +21,7 @@ func spawn_asteroids() -> void:
 		return
 	
 	var asteroid = asteroid_instance.instantiate()
-	asteroid.position.x = randf_range(0 + 16, 255 - 16)
+	asteroid.position.x = randf_range(0 + 16, screen_size.x - 16)
 	asteroid.position.y = -50
 	get_owner().add_child(asteroid)
 

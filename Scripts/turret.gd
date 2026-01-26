@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-@export var speed = 75
+@export var speed = 50
 @onready var screen_size = get_viewport_rect().size
 @onready var bullet_instance: PackedScene = preload("res://Objects/Bullet.tscn")
 
 var cooldown = 0
 var input_direction = 0
-var acceleration = 0.50
-var friction = 0.5
+var acceleration = 0.20
+var friction = 0.20
 
 func _ready() -> void:
 	Global.player = self
