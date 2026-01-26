@@ -6,8 +6,8 @@ extends CharacterBody2D
 
 var cooldown = 0
 var input_direction = 0
-var acceleration = 0.50
-var friction = 0.5
+var acceleration = 0.18
+var friction = 0.18
 
 func _ready() -> void:
 	Global.player = self
