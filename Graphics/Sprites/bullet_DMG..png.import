@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqs4vq46lh5lp"
-path="res://.godot/imported/main_bg.png-8a2fb53933f5c2cf0e1577b42e3ba7de.ctex"
+uid="uid://dwfe1vir31rh2"
+path="res://.godot/imported/bullet_DMG..png-28f68f950467409ce22f2ef01d2cbf45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Backgrounds/main_bg.png"
-dest_files=["res://.godot/imported/main_bg.png-8a2fb53933f5c2cf0e1577b42e3ba7de.ctex"]
+source_file="res://Graphics/Sprites/bullet_DMG..png"
+dest_files=["res://.godot/imported/bullet_DMG..png-28f68f950467409ce22f2ef01d2cbf45.ctex"]
 
 [params]
 

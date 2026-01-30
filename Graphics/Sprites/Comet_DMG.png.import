@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqs4vq46lh5lp"
-path="res://.godot/imported/main_bg.png-8a2fb53933f5c2cf0e1577b42e3ba7de.ctex"
+uid="uid://bf60mg0qvnya8"
+path="res://.godot/imported/Comet_DMG.png-7e026e77f87e36f1965fcb090229ae91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Backgrounds/main_bg.png"
-dest_files=["res://.godot/imported/main_bg.png-8a2fb53933f5c2cf0e1577b42e3ba7de.ctex"]
+source_file="res://Graphics/Sprites/Comet_DMG.png"
+dest_files=["res://.godot/imported/Comet_DMG.png-7e026e77f87e36f1965fcb090229ae91.ctex"]
 
 [params]
 

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://blh3uik4ylbcq"]
+
+[ext_resource type="FontFile" uid="uid://bf0jarrrcqlrv" path="res://Graphics/font.png" id="1_i3kyh"]
+
+[node name="DebugMenu" type="Control" unique_id=2052264332]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1192970448]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 90.0
+offset_right = 215.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("1_i3kyh")
+text = "Font Test 1
+
+Hello, NES!"
