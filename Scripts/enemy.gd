@@ -10,7 +10,7 @@ func Death() -> void:
 	self.queue_free()
 
 
-func Update(delta: float) -> void:
+func Update(_delta: float) -> void:
 	if health == 0:
 		Death()
 	pass
