@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsunajx7l31vk"]
 
-[ext_resource type="Texture2D" uid="uid://cwvj684jdusdq" path="res://Graphics/Backgrounds/DMG-BG.png" id="2_ovofm"]
+[ext_resource type="Texture2D" uid="uid://cqs4vq46lh5lp" path="res://Graphics/Backgrounds/main_bg.png" id="1_yijg0"]
 [ext_resource type="PackedScene" uid="uid://bnsgnjqneo4pg" path="res://Objects/Turret.tscn" id="2_r5ka5"]
 [ext_resource type="PackedScene" uid="uid://cway5ewlqlm07" path="res://Objects/EnemySpawner.tscn" id="3_tdndw"]
 [ext_resource type="AudioStream" uid="uid://8w8r4lv16uah" path="res://Audio/Concept Music/Gameplay Theme.ogg" id="4_mofsa"]
@@ -14,7 +14,7 @@ up_direction = Vector2(1, 0)
 [node name="BG" type="Sprite2D" parent="." unique_id=550241006]
 position = Vector2(80.000015, 72.8)
 scale = Vector2(1.0027778, 1.0027778)
-texture = ExtResource("2_ovofm")
+texture = ExtResource("1_yijg0")
 
 [node name="EnemySpawner" parent="." unique_id=317792479 instance=ExtResource("3_tdndw")]
 

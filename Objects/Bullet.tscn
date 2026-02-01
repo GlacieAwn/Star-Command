@@ -41,17 +41,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu4m3"]
-size = Vector2(4, 8)
+size = Vector2(6, 8)
 
 [node name="Bullet" type="Area2D" unique_id=1857439715]
 script = ExtResource("1_ljs67")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1004818041]
-visible = false
 sprite_frames = SubResource("SpriteFrames_e3lsw")
-frame_progress = 0.356277
+frame_progress = 0.7494186
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=778944874]
+visible = false
 texture = ExtResource("3_2ap01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=767701008]

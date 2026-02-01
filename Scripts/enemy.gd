@@ -1,10 +1,16 @@
 class_name Enemy extends StaticBody2D
 
+var health: int
 var explosion_animation: PackedScene = preload("res://Objects/Effects/Explosion.tscn")
 
 func Death() -> void:
 	var explosion = explosion_animation.instantiate()
+	get_parent().add_child(explosion)
 	explosion.transform = self.global_transform
-	await get_tree().create_timer(0.8).timeout
 	self.queue_free()
+
+
+func Update(delta: float) -> void:
+	if health == 0:
+		Death()
 	pass

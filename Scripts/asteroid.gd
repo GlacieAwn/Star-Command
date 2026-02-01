@@ -1,22 +1,14 @@
-extends StaticBody2D
+extends Enemy
 
 @export var speed = 30
 var is_destroyed: bool = false
-var explosion_animation: PackedScene = preload("res://Objects/Effects/Explosion.tscn")
-
 func _ready() -> void:
 	#Global.asteroid = self
+	health = 1
 	pass
 
 func _process(delta: float) -> void:
+	Update(delta)
 	position.y += speed * delta
-
 	
-
-func Death():
-	var explosion = explosion_animation.instantiate()
-	get_parent().add_child(explosion)
-	explosion.transform = self.global_transform
-	self.queue_free()
-	print(explosion)
-	
+	print(health)	
