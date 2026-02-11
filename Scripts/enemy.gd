@@ -2,6 +2,7 @@ class_name Enemy extends StaticBody2D
 
 var health: int
 var explosion_animation: PackedScene = preload("res://Objects/Effects/Explosion.tscn")
+var points_awarded: int
 
 func Death() -> void:
 	var explosion = explosion_animation.instantiate()
