@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://b0s3osmrqr74r"]
 
-[ext_resource type="Texture2D" path="res://Graphics/Sprites/UFO.png" id="1_fpae1"]
+[ext_resource type="Script" uid="uid://cvksa5lv0swcb" path="res://Scripts/ufo.gd" id="1_8shsv"]
+[ext_resource type="Texture2D" uid="uid://bfrie80v15kxe" path="res://Graphics/Sprites/UFO.png" id="2_uuwfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jhyh"]
 
-[node name="Ufo" type="StaticBody2D" unique_id=1426537357]
+[node name="UFO" type="StaticBody2D" unique_id=1426537357]
+script = ExtResource("1_8shsv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1068513377]
-texture = ExtResource("1_fpae1")
+texture = ExtResource("2_uuwfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=763232543]
 shape = SubResource("RectangleShape2D_0jhyh")
