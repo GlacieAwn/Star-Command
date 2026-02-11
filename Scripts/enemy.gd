@@ -13,5 +13,7 @@ func Death() -> void:
 
 func Update(_delta: float) -> void:
 	if health == 0:
+		Global.score += points_awarded
+		print(Global.score)
 		Death()
 	pass

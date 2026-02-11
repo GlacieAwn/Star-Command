@@ -11,5 +11,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	Update(delta)
 	position.y += speed * delta
+	speed += 0.1 * delta
 	
-	print(health)	
+	# TODO Check if the asteroid hits the player's platform. 
+	# If true, decrement the lives of the player. 
+	
+	#print(health)	
