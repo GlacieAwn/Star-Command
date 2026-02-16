@@ -1,7 +1,8 @@
 extends Enemy
-var speed = 50
 
+@onready var speed = 50
 func _ready() -> void:
+	Global.ufo = self
 	self.global_position.x = 144 + 16 # Set Object off screen on the X
 	self.global_position.y = 14 # Set Object to the right fixed height
 	health = 1 # override the health variable in the enemy class

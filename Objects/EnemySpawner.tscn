@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cway5ewlqlm07"]
+[gd_scene format=3 uid="uid://cway5ewlqlm07"]
 
 [ext_resource type="Script" uid="uid://ciu2sc201yspf" path="res://Scripts/enemy_spawner.gd" id="1_c0rbx"]
 
-[node name="EnemySpawner" type="Node2D"]
+[node name="EnemySpawner" type="Node2D" unique_id=2054086246]
 script = ExtResource("1_c0rbx")
+
+[node name="Enemies" type="Node" parent="." unique_id=1025360803]
+
+[node name="SFX_Player" type="AudioStreamPlayer2D" parent="." unique_id=907612073]
+volume_db = 6.0
+panning_strength = 0.0
+playback_type = 1
