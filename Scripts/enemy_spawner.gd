@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var asteroid_timer_rate:float = 2
+@export var asteroid_timer_rate:float = 1
 @export var ufo_timer_rate:float = 30.0
 @onready var asteroid_instance = preload("res://Objects/Asteroid.tscn")
 @onready var ufo_instance = preload("res://Objects/UFO.tscn")
@@ -51,8 +51,8 @@ func _process(delta: float) -> void:
 	asteroid_timer.wait_time = asteroid_timer_rate
 	ufo_timer.wait_time = ufo_timer_rate
 	
-	if asteroid_timer_rate <= 0.5:
-		asteroid_timer_rate = 0.5
+	if asteroid_timer_rate <= 0.8:
+		asteroid_timer_rate = 0.8
 	
 	if ufo_timer_rate <= 10:
 		ufo_timer_rate = 10

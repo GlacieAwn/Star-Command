@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 50
+@export var speed = 55
 @onready var screen_size = get_viewport_rect().size
 @onready var bullet_instance: PackedScene = preload("res://Objects/Bullet.tscn")
 

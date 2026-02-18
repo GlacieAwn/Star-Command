@@ -29,7 +29,7 @@ Global="*res://Scripts/Global.gd"
 window/size/viewport_width=160
 window/size/viewport_height=144
 window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/window_height_override=1200
 window/stretch/mode="canvas_items"
 
 [dotnet]

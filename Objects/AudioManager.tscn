@@ -6,5 +6,6 @@
 script = ExtResource("1_er88o")
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1032762349]
+volume_db = -10.0
 
 [node name="SFX_Player" type="AudioStreamPlayer2D" parent="." unique_id=2049558015]
