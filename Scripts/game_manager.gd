@@ -1,7 +1,19 @@
 extends Node
 
+var gameplay_theme_modern = preload("res://Audio/Modern/Let's Go!.ogg")
+var gameplay_theme_dmg = preload("res://Audio/DMG/Let's Go!.ogg")
+
 func _ready() -> void:
 	Global.game_manager = self
+	
+	# iterate through the current scene, and play the appropriate music based on scene name and mode
+	match get_tree().current_scene.name:
+		"Gameplay":
+			print("On the gameplay scene")
+			if Global.dmg_mode:
+				Global.audio_manager.play_music(gameplay_theme_dmg)
+			else:
+				Global.audio_manager.play_music(gameplay_theme_modern)
 	
 	
 func _process(delta: float) -> void:

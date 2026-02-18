@@ -8,3 +8,4 @@ var audio_manager
 var enemy_spawner
 
 var score:int
+var dmg_mode: bool = false
