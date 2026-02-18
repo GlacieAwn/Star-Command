@@ -6,8 +6,3 @@
 script = ExtResource("1_c0rbx")
 
 [node name="Enemies" type="Node" parent="." unique_id=1025360803]
-
-[node name="SFX_Player" type="AudioStreamPlayer2D" parent="." unique_id=907612073]
-volume_db = 6.0
-panning_strength = 0.0
-playback_type = 1

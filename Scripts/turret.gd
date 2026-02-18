@@ -9,7 +9,7 @@ var input_direction = 0
 var acceleration = 0.18
 var friction = 0.18
 
-var lives = 1
+var lives = 3
 var is_dead = false # flag for death. is used to signal to the Game Manager to hide all game objects if true and show the "Game Over" Text
 var start_pos: Vector2 
 
@@ -18,6 +18,8 @@ var explosion_animation: PackedScene = preload("res://Objects/Effects/Explosion.
 var explode_sfx = preload("res://Audio/SFX/SFX_Explode.wav")
 var shoot_sfx = preload("res://Audio/SFX/SFX_Shoot.wav")
 var death_sfx = preload("res://Audio/SFX/SFX_Player_Death.wav")
+
+var audio_manager
 
 func _ready()-> void:
 	Global.player = self
@@ -47,16 +49,14 @@ func _physics_process(_delta: float) -> void:
 		is_dead = true # Set is_dead flag to true if player lost all lives
 
 	if Input.is_action_just_pressed("Shoot") and cooldown == 0:
-		$SFX_Player.stream = shoot_sfx
-		$SFX_Player.play()
+		Global.audio_manager.play_sfx(shoot_sfx)
 		var bullet = bullet_instance.instantiate() # create a new instance of the bullet
 		get_parent().add_child(bullet) # add it to this object as a child
 		bullet.transform = global_transform # set it to this object's transform. Since the bullet is lower in the Z depth on the actual node properties, it appears behind the player
 		cooldown = 50
 
 func Death():
-	$SFX_Player.stream = explode_sfx
-	$SFX_Player.play()
+	Global.audio_manager.play_sfx(explode_sfx)
 	Global.player.lives -= 1
 	hide()
 		
@@ -70,9 +70,8 @@ func Death():
 	print(is_dead)
 	
 	if is_dead:
-		$SFX_Player.stream = death_sfx
-		$SFX_Player.play()
-		$Music_Player.stop()
+		Global.audio_manager.play_sfx(death_sfx)
+		Global.audio_manager.stop_music()
 		hide()
 		Global.game_manager.clear_screen()
 		lives = 0

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b5xnhveulo1cn" path="res://Graphics/Sprites/Turret.png" id="1_brla1"]
 [ext_resource type="Script" uid="uid://cc4jhm1asdxlp" path="res://Scripts/turret.gd" id="1_hfhj2"]
-[ext_resource type="AudioStream" uid="uid://dy3pgd1jj7kc7" path="res://Audio/Modern/Let's Go!.ogg" id="3_7y64c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brla1"]
 size = Vector2(16, 6)
@@ -26,17 +25,3 @@ shape = SubResource("RectangleShape2D_brla1")
 [node name="Barrel_Collision" type="CollisionShape2D" parent="." unique_id=1247477174]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_hfhj2")
-
-[node name="Music_Player" type="AudioStreamPlayer2D" parent="." unique_id=1090830803]
-stream = ExtResource("3_7y64c")
-volume_db = -2.0
-autoplay = true
-attenuation = 0.93303365
-panning_strength = 0.0
-playback_type = 1
-parameters/looping = true
-
-[node name="SFX_Player" type="AudioStreamPlayer2D" parent="." unique_id=1183610381]
-volume_db = 6.0
-panning_strength = 0.0
-playback_type = 1
