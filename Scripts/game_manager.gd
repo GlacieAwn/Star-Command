@@ -3,20 +3,28 @@ extends Node
 var gameplay_theme_modern = preload("res://Audio/Modern/Let's Go!.ogg")
 var gameplay_theme_dmg = preload("res://Audio/DMG/Let's Go!.ogg")
 
+enum GAME_STATE {
+	TITLE,
+	GAMEPLAY
+}
+var state: GAME_STATE
+
 func _ready() -> void:
 	Global.game_manager = self
 	
-	# iterate through the current scene, and play the appropriate music based on scene name and mode
-	match get_tree().current_scene.name:
-		"Gameplay":
-			print("On the gameplay scene")
-			if Global.dmg_mode:
+	# TODO: set up game states and select music to play based on state and mode(for dmg audio)
+	match state:
+		GAME_STATE.TITLE:
+			pass
+		GAME_STATE.GAMEPLAY:
+			if Global.dmg_mode == true:
 				Global.audio_manager.play_music(gameplay_theme_dmg)
 			else:
 				Global.audio_manager.play_music(gameplay_theme_modern)
+			pass
 	
 	
-func _process(delta: float) -> void:
+func _process(delta: float) -> void: 
 	$Container/ScoreText.text = str(Global.score)
 	$Container/LivesText.text = str("*", Global.player.lives)
 	

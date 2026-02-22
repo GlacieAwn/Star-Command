@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnsgnjqneo4pg" path="res://Objects/Turret.tscn" id="2_r5ka5"]
 [ext_resource type="PackedScene" uid="uid://cway5ewlqlm07" path="res://Objects/EnemySpawner.tscn" id="3_tdndw"]
 [ext_resource type="FontFile" uid="uid://dhes43thpyuc5" path="res://Graphics/font.png" id="5_mofsa"]
-[ext_resource type="PackedScene" uid="uid://hxeqq3s7o4sq" path="res://Objects/AudioManager.tscn" id="5_u8j7u"]
+[ext_resource type="PackedScene" uid="uid://hxeqq3s7o4sq" path="res://Objects/AudioManager.tscn" id="6_u8j7u"]
 [ext_resource type="Script" uid="uid://bgupworo3uaq6" path="res://Scripts/game_manager.gd" id="7_rhmiw"]
 
 [node name="Gameplay" type="Node2D" unique_id=699171550]
@@ -20,8 +20,6 @@ scale = Vector2(1.0027778, 1.0027778)
 texture = ExtResource("1_yijg0")
 
 [node name="EnemySpawner" parent="." unique_id=317792479 instance=ExtResource("3_tdndw")]
-
-[node name="AudioManager" parent="." unique_id=1675594417 instance=ExtResource("5_u8j7u")]
 
 [node name="Container" type="Control" parent="." unique_id=1961720263]
 layout_mode = 3
@@ -52,3 +50,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_mofsa")
 theme_override_font_sizes/font_size = 8
 text = "*3"
+
+[node name="AudioManager" parent="." unique_id=1675594417 instance=ExtResource("6_u8j7u")]

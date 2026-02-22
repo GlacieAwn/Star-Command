@@ -6,8 +6,8 @@ var stream_pool
 
 
 func _ready(	) -> void:
-	stream_pool = [MAX_STREAM_COUNT]
 	Global.audio_manager = self
+	stream_pool = [MAX_STREAM_COUNT]
 	
 func _process(_delta: float) -> void:
 	pass

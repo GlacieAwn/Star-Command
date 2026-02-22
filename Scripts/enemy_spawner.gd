@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var asteroid_timer_rate:float = 1
+@export var asteroid_timer_rate:float = 2
 @export var ufo_timer_rate:float = 30.0
 @onready var asteroid_instance = preload("res://Objects/Asteroid.tscn")
 @onready var ufo_instance = preload("res://Objects/UFO.tscn")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://5midvstt127w"]
+
+[ext_resource type="PackedScene" uid="uid://bsunajx7l31vk" path="res://Scenes/Gameplay.tscn" id="1_2aiem"]
+[ext_resource type="Shader" uid="uid://1a4abv3oa6km" path="res://Scripts/Shaders/lcd.gdshader" id="1_pmv0v"]
+[ext_resource type="PackedScene" uid="uid://hxeqq3s7o4sq" path="res://Objects/AudioManager.tscn" id="2_aqkyo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_418ah"]
+shader = ExtResource("1_pmv0v")
+shader_parameter/stripe = 0.5
+shader_parameter/scan = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqkyo"]
+shader = ExtResource("1_pmv0v")
+shader_parameter/stripe = 1.0
+shader_parameter/scan = 1.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pmv0v"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Game_tscn" type="Node2D" unique_id=1744175416]
+material = SubResource("ShaderMaterial_418ah")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=614924377]
+material = SubResource("ShaderMaterial_aqkyo")
+position = Vector2(80, 72)
+texture = SubResource("ViewportTexture_pmv0v")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1141519522]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(160, 144)
+size_2d_override = Vector2i(160, 144)
+
+[node name="Gameplay" parent="SubViewport" unique_id=699171550 instance=ExtResource("1_2aiem")]
+
+[node name="AudioManager" parent="SubViewport" unique_id=1675594417 instance=ExtResource("2_aqkyo")]
