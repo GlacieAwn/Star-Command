@@ -7,7 +7,7 @@ enum GAME_STATE {
 	TITLE,
 	GAMEPLAY
 }
-var state: GAME_STATE
+var state: GAME_STATE = GAME_STATE.GAMEPLAY
 
 func _ready() -> void:
 	Global.game_manager = self
@@ -17,16 +17,12 @@ func _ready() -> void:
 		GAME_STATE.TITLE:
 			pass
 		GAME_STATE.GAMEPLAY:
-			if Global.dmg_mode == true:
-				Global.audio_manager.play_music(gameplay_theme_dmg)
-			else:
-				Global.audio_manager.play_music(gameplay_theme_modern)
-			pass
+			Global.audio_manager.play_music(gameplay_theme_dmg)
 	
 	
-func _process(delta: float) -> void: 
-	$Container/ScoreText.text = str(Global.score)
-	$Container/LivesText.text = str("*", Global.player.lives)
+func _process(_delta: float) -> void: 
+	#$Container/ScoreText.text = str(Global.score)
+	#$Container/LivesText.text = str("*", Global.player.lives)
 	
 	# Update enemies speed values so that they update per the 
 	# lifetime of the game, not the lifetime of the object
@@ -34,6 +30,12 @@ func _process(delta: float) -> void:
 	#print(Global.score)
 	pass
 	
+func _physics_process(_delta: float) -> void:
+	Global.player.Update()
+	
+func process(delta: float) -> void:
+	Global.asteroid.Update(delta)
+	Global.ufo.Update(delta)
 
 func clear_screen() -> void:
 	for Node in $EnemySpawner/Enemies.get_children():

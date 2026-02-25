@@ -20,18 +20,8 @@ var shoot_sfx = preload("res://Audio/SFX/SFX_Shoot.wav")
 var death_sfx = preload("res://Audio/SFX/SFX_Player_Death.wav")
 
 var audio_manager
-
-func _ready()-> void:
-	Global.player = self
-	start_pos.y = 127
-	start_pos.x = screen_size.x / 2
 	
-	
-	
-func _process(_delta: float) -> void:
-	input_direction = Input.get_axis("Move_Left", "Move_Right")
-
-func _physics_process(_delta: float) -> void:
+func Update() -> void:
 	if input_direction != 0:
 		velocity.x = lerp(velocity.x, input_direction * speed, acceleration)
 	else:
@@ -55,6 +45,14 @@ func _physics_process(_delta: float) -> void:
 		bullet.transform = global_transform # set it to this object's transform. Since the bullet is lower in the Z depth on the actual node properties, it appears behind the player
 		cooldown = 50
 
+func _ready()-> void:
+	Global.player = self
+	start_pos.y = 127
+	start_pos.x = screen_size.x / 2
+	
+func _process(_delta: float) -> void:
+	input_direction = Input.get_axis("Move_Left", "Move_Right")
+	
 func Death():
 	Global.audio_manager.play_sfx(explode_sfx)
 	Global.player.lives -= 1

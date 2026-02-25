@@ -8,10 +8,10 @@ func _ready() -> void:
 	health = 1 # override the health variable in the enemy class
 	points_awarded = 500 #override the amount of points awarded from the enemy class
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	pass
 	#print("Health: %i", health)s
-	Update(delta)
-
+	
 func Update(delta: float) -> void:
 	self.position.x -= speed * delta
 	speed += 0.01 * delta

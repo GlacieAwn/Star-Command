@@ -7,7 +7,7 @@ void fragment() {
 	// Called for every pixel the material is visible on.
 	vec4 color = texture(TEXTURE, UV);
 	vec4 lcd = vec4(stripe, stripe, stripe, 1.0);
-	int rgb_stripe = int(mod(FRAGCOORD.x, 10.0));
+	int rgb_stripe = int(mod(FRAGCOORD.x, 10.5));
 	
 	if(rgb_stripe == 1){
 		lcd.r = 1.0;
@@ -16,7 +16,7 @@ void fragment() {
 	} else{
 		lcd.b = 1.0;
 	}
-	if(int(mod(FRAGCOORD.y, 10.0)) == 0){
+	if(int(mod(FRAGCOORD.y, 10.5)) == 0){
 		lcd.rgb = vec3(scan);
 	}
 	

@@ -49,6 +49,5 @@ offset_bottom = 143.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_mofsa")
 theme_override_font_sizes/font_size = 8
-text = "*3"
 
 [node name="AudioManager" parent="." unique_id=1675594417 instance=ExtResource("6_u8j7u")]

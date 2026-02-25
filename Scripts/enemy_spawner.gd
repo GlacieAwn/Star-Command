@@ -46,7 +46,7 @@ func spawn_ufo() -> void:
 	var ufo = ufo_instance.instantiate()
 	$Enemies.add_child(ufo)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# print("Asteroid timer: %f", asteroid_timer.time_left)
 	asteroid_timer.wait_time = asteroid_timer_rate
 	ufo_timer.wait_time = ufo_timer_rate
