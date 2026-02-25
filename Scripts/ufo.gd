@@ -8,19 +8,9 @@ func _ready() -> void:
 	health = 1 # override the health variable in the enemy class
 	points_awarded = 500 #override the amount of points awarded from the enemy class
 	
-func _process(_delta: float) -> void:
-	pass
-	#print("Health: %i", health)s
-	
-func Update(delta: float) -> void:
+func _process(delta: float) -> void:
 	self.position.x -= speed * delta
 	speed += 0.01 * delta
 	#await get_tree().create_timer(1).timeout
 	#health = 0
-	
-	
-	if health == 0:
-		Global.score += points_awarded
-		print(Global.score)
-		Death()
-	
+	Update(delta)

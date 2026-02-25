@@ -11,20 +11,12 @@ func _ready() -> void:
 	Global.asteroid = self
 	pass
 
-func _process(_delta: float) -> void:
-	pass
-
-
-		
-func Update(delta: float) -> void:
+func _process(delta: float) -> void:
 	position.y += speed * delta
 	
 	if self.position.y >= Global.player.position.y:
 		Global.player.Death()
 		queue_free()
-		
-	if health == 0:
-		Global.score += points_awarded
-		print(Global.score)
-		Death()
+
+	Update(delta)
 	pass
