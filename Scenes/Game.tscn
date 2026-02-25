@@ -40,8 +40,6 @@ material = SubResource("ShaderMaterial_aqkyo")
 position = Vector2(80, 72)
 texture = SubResource("ViewportTexture_pmv0v")
 
-[node name="AudioManager" parent="." unique_id=1675594417 instance=ExtResource("3_7lihs")]
-
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1141519522]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
@@ -52,3 +50,5 @@ size_2d_override = Vector2i(160, 144)
 [node name="Gameplay" parent="SubViewport" unique_id=699171550 instance=ExtResource("4_fgofq")]
 
 [node name="UI" parent="." unique_id=1053586248 instance=ExtResource("6_fgofq")]
+
+[node name="AudioManager" parent="." unique_id=1675594417 instance=ExtResource("3_7lihs")]
