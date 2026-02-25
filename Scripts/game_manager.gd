@@ -7,19 +7,17 @@ func _ready() -> void:
 	Global.game_manager = self	
 	
 func _process(_delta: float) -> void: 
-	$Container/ScoreText.text = str(Global.score)
-	$Container/LivesText.text = str("*", Global.player.lives)
+	$UI/ScoreText.text = str(Global.score)
+	$UI/LivesText.text = str("*", Global.player.lives)
 	
 	#print(Global.score)
 	pass
 	
 func _physics_process(_delta: float) -> void:
-	Global.player.Update()
-	
+	pass
 func process(delta: float) -> void:
-	Global.asteroid.Update(delta)
-	Global.ufo.Update(delta)
-
+	pass
+	
 func clear_screen() -> void:
 	for Node in $EnemySpawner/Enemies.get_children():
 		Node.queue_free()
