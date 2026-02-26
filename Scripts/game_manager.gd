@@ -3,6 +3,7 @@ extends Node
 var gameplay_theme_modern = preload("res://Audio/Modern/Let's Go!.ogg")
 var gameplay_theme_dmg = preload("res://Audio/DMG/Let's Go!.ogg")
 
+var game_state: Global.GAME_STATE
 var scene_instance: Node
 
 func _ready() -> void:
