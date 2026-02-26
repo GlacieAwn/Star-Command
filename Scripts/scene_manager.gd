@@ -15,5 +15,5 @@ func load_scene(path: String, free: bool) -> Node:
 	if loaded_scene == null:
 		return
 	
-	scene_instance = loaded_scene.instantance()
+	scene_instance = loaded_scene.instantiate()
 	return scene_instance

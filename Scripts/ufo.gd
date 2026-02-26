@@ -1,6 +1,7 @@
 extends Enemy
 
 @onready var speed = 50
+
 func _ready() -> void:
 	Global.ufo = self
 	self.global_position.x = 144 + 16 # Set Object off screen on the X
