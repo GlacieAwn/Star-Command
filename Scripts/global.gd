@@ -9,3 +9,10 @@ var enemy_spawner
 
 var score:int
 var dmg_mode: bool = false
+
+enum GAME_STATE {
+	TITLE,
+	OPTIONS,
+	GAMEPLAY,
+	PAUSE
+}

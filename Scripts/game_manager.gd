@@ -3,6 +3,8 @@ extends Node
 var gameplay_theme_modern = preload("res://Audio/Modern/Let's Go!.ogg")
 var gameplay_theme_dmg = preload("res://Audio/DMG/Let's Go!.ogg")
 
+var scene_instance: Node
+
 func _ready() -> void:
 	Global.game_manager = self	
 	
@@ -15,7 +17,8 @@ func _process(_delta: float) -> void:
 	
 func _physics_process(_delta: float) -> void:
 	pass
-func process(delta: float) -> void:
+
+func process(_delta: float) -> void:
 	pass
 	
 func clear_screen() -> void:
@@ -25,3 +28,4 @@ func clear_screen() -> void:
 	if Global.player.is_dead == true:
 		$EnemySpawner.queue_free()
 	pass
+	
