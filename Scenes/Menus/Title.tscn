@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dc1vjysd0gjh6"]
 
+[ext_resource type="Script" uid="uid://k1bwedbasmdm" path="res://Scripts/menu_manager.gd" id="1_ab4mj"]
+[ext_resource type="Texture2D" uid="uid://dc0oy2jg12rnd" path="res://Graphics/UI/title.png" id="1_ho2th"]
+
 [node name="Title" type="Control" unique_id=945021807]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ab4mj")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=805130651]
+position = Vector2(80, 33)
+texture = ExtResource("1_ho2th")
