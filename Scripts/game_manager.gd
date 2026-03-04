@@ -3,11 +3,12 @@ extends Node
 # var gameplay_theme_modern = preload("res://Audio/Modern/Let's Go!.ogg")
 
 var game_state: Global.GAME_STATE
+var cur = 0
 var scene_instance: Node
 
 func _ready() -> void:
 	Global.game_manager = self	
-	game_state = Global.GAME_STATE.TITLE
+	game_state = Global.GAME_STATE.GAMEPLAY
 
 	match game_state:
 		Global.GAME_STATE.TITLE:
@@ -16,6 +17,7 @@ func _ready() -> void:
 		
 		Global.GAME_STATE.GAMEPLAY:
 			Global.audio_manager.play_music(Global.gameplay_theme_dmg)
+
 			pass
 	
 func _process(_delta: float) -> void: 
