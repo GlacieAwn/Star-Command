@@ -25,11 +25,10 @@ func _process(_delta: float) -> void:
 			pass
 		
 		Global.GAME_STATE.GAMEPLAY:
-			pass
+			$UI/ScoreText.text = str(Global.score)
+			$UI/LivesText.text = str("*", Global.player.lives)
 		_:
 			pass
-	$UI/ScoreText.text = str(Global.score)
-	$UI/LivesText.text = str("*", Global.player.lives)
 	
 	#print(Global.score)
 	pass
