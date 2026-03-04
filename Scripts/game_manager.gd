@@ -17,7 +17,6 @@ func _ready() -> void:
 		
 		Global.GAME_STATE.GAMEPLAY:
 			Global.audio_manager.play_music(Global.gameplay_theme_dmg)
-
 			pass
 	
 func _process(_delta: float) -> void: 
