@@ -19,8 +19,6 @@ func _ready()-> void:
 	Global.player = self
 	start_pos.y = 127
 	start_pos.x = screen_size.x / 2
-
-	AudioManager.play_music(Global.gameplay_theme_dmg)
 	
 func _process(_delta: float) -> void:
 	input_direction = Input.get_axis("Move_Left", "Move_Right")
@@ -43,14 +41,14 @@ func _physics_process(_delta: float) -> void:
 		is_dead = true # Set is_dead flag to true if player lost all lives
 
 	if Input.is_action_just_pressed("Shoot") and cooldown == 0:
-		AudioManager.play_sfx(Global.shoot_sfx)
+		Global.audio_manager.play_sfx(Global.shoot_sfx)
 		var bullet = bullet_instance.instantiate() # create a new instance of the bullet
 		get_parent().add_child(bullet) # add it to this object as a child
 		bullet.transform = global_transform # set it to this object's transform. Since the bullet is lower in the Z depth on the actual node properties, it appears behind the player
 		cooldown = 50
 
 func Death():
-	AudioManager.play_sfx(Global.explode_sfx)
+	Global.audio_manager.play_sfx(Global.explode_sfx)
 	Global.player.lives -= 1
 	hide()
 		
@@ -64,8 +62,8 @@ func Death():
 	print(is_dead)
 	
 	if is_dead:
-		AudioManager.play_sfx(Global.death_sfx)
-		AudioManager.stop_music()
+		Global.audio_manager.play_sfx(Global.death_sfx)
+		Global.audio_manager.stop_music()
 		hide()
 		Global.game_manager.clear_screen()
 		lives = 0
