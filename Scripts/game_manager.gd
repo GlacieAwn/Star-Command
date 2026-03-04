@@ -7,10 +7,28 @@ var scene_instance: Node
 
 func _ready() -> void:
 	Global.game_manager = self	
-	game_state = Global.GAME_STATE.GAMEPLAY
+	game_state = Global.GAME_STATE.TITLE
+
+	match game_state:
+		Global.GAME_STATE.TITLE:
+			pass
+		
+		Global.GAME_STATE.GAMEPLAY:
+			pass
+		_:
+			pass
 
 	
 func _process(_delta: float) -> void: 
+
+	match game_state:
+		Global.GAME_STATE.TITLE:
+			pass
+		
+		Global.GAME_STATE.GAMEPLAY:
+			pass
+		_:
+			pass
 	$UI/ScoreText.text = str(Global.score)
 	$UI/LivesText.text = str("*", Global.player.lives)
 	
