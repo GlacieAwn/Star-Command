@@ -11,13 +11,12 @@ func _ready() -> void:
 
 	match game_state:
 		Global.GAME_STATE.TITLE:
+			Global.audio_manager.play_music(Global.title_theme_dmg)
 			pass
 		
 		Global.GAME_STATE.GAMEPLAY:
+			Global.audio_manager.play_music(Global.gameplay_theme_dmg)
 			pass
-		_:
-			pass
-
 	
 func _process(_delta: float) -> void: 
 
