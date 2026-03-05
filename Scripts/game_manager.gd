@@ -41,10 +41,10 @@ func process(_delta: float) -> void:
 	pass
 	
 func clear_screen() -> void:
-	for Node in $SubViewport/Gameplay/EnemySpawner/Enemies.get_children():
-		Node.queue_free()
-		
-	if Global.player.is_dead == true:
-		$SubViewport/Gameplay/EnemySpawner.queue_free()
+
+	if game_state == Global.GAME_STATE.GAMEPLAY:
+		for Node in $SubViewport/Gameplay/EnemySpawner/Enemies.get_children():
+			Node.queue_free()
+	
 	pass
 	
