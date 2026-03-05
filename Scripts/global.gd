@@ -6,6 +6,7 @@ var ufo
 var game_manager
 var audio_manager
 var enemy_spawner
+var scene_manager
 
 var score:int
 var dmg_mode: bool = false

@@ -4,7 +4,6 @@ extends Node
 
 var game_state: Global.GAME_STATE
 var cur = 0
-var scene_instance: Node
 
 func _ready() -> void:
 	Global.game_manager = self	
@@ -20,11 +19,11 @@ func _ready() -> void:
 			pass
 	
 func _process(_delta: float) -> void: 
-
 	match game_state:
 		Global.GAME_STATE.TITLE:
-			pass
-		
+			var title_scene_instance = Global.scene_manager.load_scene("res://Scenes/Menus/Title.tscn", false)
+			$SubViewport.add_child(title_scene_instance)
+
 		Global.GAME_STATE.GAMEPLAY:
 			$UI/ScoreText.text = str(Global.score)
 			$UI/LivesText.text = str("*", Global.player.lives)
