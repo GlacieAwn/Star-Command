@@ -42,8 +42,8 @@ func process(_delta: float) -> void:
 func clear_screen() -> void:
 
 	if game_state == Global.GAME_STATE.GAMEPLAY:
-		for Node in $SubViewport/Gameplay/EnemySpawner/Enemies.get_children():
-			Node.queue_free()
+		for node in $SubViewport/Gameplay/EnemySpawner/Enemies.get_children():
+			node.queue_free()
 	
 	pass
 	
