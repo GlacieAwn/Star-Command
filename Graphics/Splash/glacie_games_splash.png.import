@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl4j8c4th68h0"
-path="res://.godot/imported/glacie_games.splash.png-b3c424db8ad245779a58ef70b5272994.ctex"
+path="res://.godot/imported/glacie_games_splash.png-478de54fbfe3dafa436d22c6edfc43f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Splash/glacie_games.splash.png"
-dest_files=["res://.godot/imported/glacie_games.splash.png-b3c424db8ad245779a58ef70b5272994.ctex"]
+source_file="res://Graphics/Splash/glacie_games_splash.png"
+dest_files=["res://.godot/imported/glacie_games_splash.png-478de54fbfe3dafa436d22c6edfc43f4.ctex"]
 
 [params]
 

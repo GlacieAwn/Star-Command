@@ -9,6 +9,7 @@ var enemy_spawner
 var scene_manager
 
 var score:int
+var high_score: int
 var dmg_mode: bool = false
 
 enum GAME_STATE {
@@ -29,3 +30,4 @@ var gameplay_theme_dmg = preload("res://Audio/DMG/Let's Go!.ogg")
 var explode_sfx = preload("res://Audio/SFX/SFX_Explode.wav")
 var shoot_sfx = preload("res://Audio/SFX/SFX_Shoot.wav")
 var death_sfx = preload("res://Audio/SFX/SFX_Player_Death.wav")
+var splash_sfx = preload("res://Audio/Splash.wav")
