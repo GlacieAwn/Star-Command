@@ -51,9 +51,9 @@ func _process(_delta: float) -> void:
 		Global.audio_manager.play_music(Global.gameplay_theme_dmg)
 		$SubViewport.add_child(gameplay_scene_instance)
 		await $"Screen Fade/AnimationPlayer".animation_finished
-		$"UI/Gameplay Text".text = str("Ready?")
+		$"UI/GameplayText".text = str("Ready?")
 		await get_tree().create_timer(1).timeout
-		$"UI/Gameplay Text".text = str("")
+		$"UI/GameplayText".text = str("")
 		gameplay_loaded = true
 	
 	if gameplay_loaded:
@@ -62,16 +62,16 @@ func _process(_delta: float) -> void:
 
 		# Handle Pausing
 		if Input.is_action_just_pressed("Pause") and is_paused == false:
-			$"UI/Gameplay Text".text = str("Paused")
+			$"UI/GameplayText".text = str("Paused")
 			Engine.time_scale = 0
 			is_paused = true
 		elif Input.is_action_just_pressed("Pause") and is_paused == true:
-			$"UI/Gameplay Text".text = str("")
+			$"UI/GameplayText".text = str("")
 			Engine.time_scale = 1
 			is_paused = false
 
 		if Global.player.is_dead:
-			$"UI/Gameplay Text".text = str("Game Over")
+			$"UI/GameplayText".text = str("Game Over")
 			Global.score += Global.high_score
 			await get_tree().create_timer(5).timeout
 			splash_done = true
