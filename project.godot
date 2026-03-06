@@ -27,6 +27,7 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 SceneManager="*uid://b4108ie8ns0hp"
 AudioManager="*uid://ci3nnvonxqx7k"
+ScreenTransition="*uid://cmmis5uumfqba"
 
 [display]
 

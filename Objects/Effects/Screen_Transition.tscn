@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cv13kif84g22w"]
+
+[ext_resource type="Shader" uid="uid://cvlteepasquh0" path="res://Scripts/Shaders/Screen_Transition.gdshader" id="1_3l3n2"]
+[ext_resource type="Script" uid="uid://cmmis5uumfqba" path="res://Scripts/screen_transition.gd" id="2_c6v32"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6v32"]
+shader = ExtResource("1_3l3n2")
+shader_parameter/fade_progress = 0.0
+
+[node name="ScreenTransition" type="Node" unique_id=183593364]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=101246702]
+material = SubResource("ShaderMaterial_c6v32")
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_c6v32")
