@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bgupworo3uaq6" path="res://Scripts/game_manager.gd" id="2_7lihs"]
 [ext_resource type="Shader" uid="uid://cvlteepasquh0" path="res://Scripts/Shaders/Screen_Transition.gdshader" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://hxeqq3s7o4sq" path="res://Objects/AudioManager.tscn" id="3_7lihs"]
-[ext_resource type="PackedScene" uid="uid://bsunajx7l31vk" path="res://Scenes/Gameplay.tscn" id="4_fgofq"]
 [ext_resource type="PackedScene" uid="uid://v3h7ppwqbp23" path="res://Objects/ui.tscn" id="6_fgofq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_418ah"]
@@ -46,8 +45,6 @@ snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
 size = Vector2i(160, 144)
 size_2d_override = Vector2i(160, 144)
-
-[node name="Gameplay" parent="SubViewport" unique_id=699171550 instance=ExtResource("4_fgofq")]
 
 [node name="UI" parent="." unique_id=1053586248 instance=ExtResource("6_fgofq")]
 
