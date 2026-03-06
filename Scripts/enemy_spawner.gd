@@ -10,6 +10,7 @@ var asteroid_speed
 var ufo_speed
 var asteroid_timer = Timer.new()
 var ufo_timer = Timer.new()
+
 # TODO: Load other enemies that the spawner needs to spawn
 
 func _ready() -> void:
@@ -56,5 +57,10 @@ func _process(_delta: float) -> void:
 	
 	if ufo_timer_rate <= 10:
 		ufo_timer_rate = 10
+
+	# Check for player death. If true: stop the timers so that enemies don't spawn after death causing a loop of enemies still colliding with the "Player position", triggering the death sound effect in a loop
+	if Global.player.is_dead:
+		asteroid_timer.stop()
+		ufo_timer.stop()
 	
 	pass
