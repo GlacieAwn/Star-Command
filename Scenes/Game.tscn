@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://1a4abv3oa6km" path="res://Scripts/Shaders/lcd.gdshader" id="1_kldst"]
 [ext_resource type="Script" uid="uid://bgupworo3uaq6" path="res://Scripts/game_manager.gd" id="2_7lihs"]
-[ext_resource type="Shader" uid="uid://cvlteepasquh0" path="res://Scripts/Shaders/Screen_Transition.gdshader" id="2_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://hxeqq3s7o4sq" path="res://Objects/AudioManager.tscn" id="3_7lihs"]
+[ext_resource type="PackedScene" uid="uid://cym4aki6pcptq" path="res://Objects/Effects/Screen Fade.tscn" id="3_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://v3h7ppwqbp23" path="res://Objects/ui.tscn" id="6_fgofq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_418ah"]
@@ -11,14 +11,10 @@ shader = ExtResource("1_kldst")
 shader_parameter/stripe = 0.5
 shader_parameter/scan = 0.5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlm6b"]
-shader = ExtResource("2_b2bpf")
-shader_parameter/fade_progress = 1.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqkyo"]
 shader = ExtResource("1_kldst")
-shader_parameter/stripe = 0.9
-shader_parameter/scan = 0.7
+shader_parameter/stripe = 1.0
+shader_parameter/scan = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pmv0v"]
 viewport_path = NodePath("SubViewport")
@@ -26,13 +22,6 @@ viewport_path = NodePath("SubViewport")
 [node name="Game_tscn" type="Node2D" unique_id=1744175416]
 material = SubResource("ShaderMaterial_418ah")
 script = ExtResource("2_7lihs")
-
-[node name="Screen Transition" type="ColorRect" parent="." unique_id=1778685954]
-z_index = 2
-material = SubResource("ShaderMaterial_qlm6b")
-offset_right = 160.0
-offset_bottom = 144.0
-color = Color(0, 0, 0, 1)
 
 [node name="LCD Filter" type="Sprite2D" parent="." unique_id=614924377]
 material = SubResource("ShaderMaterial_aqkyo")
@@ -47,5 +36,7 @@ size = Vector2i(160, 144)
 size_2d_override = Vector2i(160, 144)
 
 [node name="UI" parent="." unique_id=1053586248 instance=ExtResource("6_fgofq")]
+
+[node name="Screen Fade" parent="." unique_id=11306322 instance=ExtResource("3_b2bpf")]
 
 [node name="AudioManager" parent="." unique_id=1675594417 instance=ExtResource("3_7lihs")]
