@@ -1,6 +1,6 @@
 extends Node
 
-var splash_done: bool = false
+var splash_done: bool = true
 var title_scene_loaded: bool = false
 var gameplay_loaded: bool = false
 var cur = 0
@@ -9,6 +9,7 @@ var is_paused: bool = false
 
 func _ready() -> void:
 	Global.game_manager = self	
+	Global.score = 0
 
 	$"Screen Fade/AnimationPlayer".play("RESET")
 
@@ -56,7 +57,7 @@ func _process(_delta: float) -> void:
 		await $"Screen Fade/AnimationPlayer".animation_finished
 		$"UI/GameplayText".text = str("Ready?")
 		await get_tree().create_timer(1).timeout
-		$"UI/GameplayText".text = str("")
+		$"UI/GameplayText".hide()
 		gameplay_loaded = true
 	
 	if gameplay_loaded:
@@ -66,11 +67,11 @@ func _process(_delta: float) -> void:
 		# Handle Pausing
 		if Input.is_action_just_pressed("Pause") and is_paused == false:
 			$"UI/GameplayText".text = str("Paused")
-			Engine.time_scale = 0
+			get_tree().paused = true
 			is_paused = true
 		elif Input.is_action_just_pressed("Pause") and is_paused == true:
-			$"UI/GameplayText".text = str("")
-			Engine.time_scale = 1
+			$"UI/GameplayText".hide()
+			get_tree().paused = false
 			is_paused = false
 
 		if Global.player.is_dead:

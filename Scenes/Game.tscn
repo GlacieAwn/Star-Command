@@ -79,6 +79,7 @@ _data = {
 }
 
 [node name="Game_tscn" type="Node2D" unique_id=1744175416]
+process_mode = 1
 material = SubResource("ShaderMaterial_418ah")
 script = ExtResource("2_7lihs")
 
