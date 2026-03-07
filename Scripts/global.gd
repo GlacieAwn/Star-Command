@@ -10,7 +10,8 @@ var scene_manager
 
 var score:int
 var high_score: int
-var dmg_mode: bool = false
+var dmg_mode: bool = false # Unused in this current version
+var splash_done: bool = false
 
 enum GAME_STATE {
 	TITLE,

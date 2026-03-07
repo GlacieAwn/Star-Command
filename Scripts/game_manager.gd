@@ -1,6 +1,5 @@
 extends Node
 
-var splash_done: bool = true
 var title_scene_loaded: bool = false
 var gameplay_loaded: bool = false
 var cur = 0
@@ -13,7 +12,7 @@ func _ready() -> void:
 
 	$"Screen Fade/AnimationPlayer".play("RESET")
 
-	if not splash_done:
+	if not Global.splash_done:
 		var splash_graphic = Sprite2D.new()
 		$SubViewport.add_child(splash_graphic)
 		splash_graphic.position = Vector2(160 / 2, 144 / 2)
@@ -29,12 +28,12 @@ func _ready() -> void:
 		$"Screen Fade/AnimationPlayer".play("Fade")
 		await $"Screen Fade/AnimationPlayer".animation_finished
 		splash_graphic.queue_free()
-		splash_done = true
+		Global.splash_done = true
 
 
 
 
-	if splash_done and not title_scene_loaded:
+	if Global.splash_done and not title_scene_loaded:
 		$"Screen Fade/AnimationPlayer".play_backwards("Fade")
 		Global.audio_manager.play_music(Global.title_theme_dmg)
 		var title_scene_instance = Global.scene_manager.load_scene("res://Scenes/Menus/Title.tscn", false)
@@ -67,18 +66,20 @@ func _process(_delta: float) -> void:
 		# Handle Pausing
 		if Input.is_action_just_pressed("Pause") and is_paused == false:
 			$"UI/GameplayText".text = str("Paused")
-			get_tree().paused = true
+			$"UI/GameplayText".show()
+			Engine.time_scale = 0
 			is_paused = true
 		elif Input.is_action_just_pressed("Pause") and is_paused == true:
 			$"UI/GameplayText".hide()
-			get_tree().paused = false
+			Engine.time_scale = 1
 			is_paused = false
 
 		if Global.player.is_dead:
 			$"UI/GameplayText".text = str("Game Over")
-			Global.score += Global.high_score
+			$"UI/GameplayText".show()
+			Global.high_score = Global.score
 			await get_tree().create_timer(5).timeout
-			splash_done = true
+			Global.splash_done = true
 			get_tree().reload_current_scene()
 	
 	#print(Global.score)
