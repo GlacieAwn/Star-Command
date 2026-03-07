@@ -40,10 +40,13 @@ func _ready() -> void:
 		$SubViewport.add_child(title_scene_instance)
 		title_scene_loaded = true
 
+		$"UI/HighScoreText".text = str("High Score:", Global.high_score)
+
 
 func _process(_delta: float) -> void:
 	if title_scene_loaded and Input.is_action_just_pressed("Start") and not gameplay_loaded:
 		Global.audio_manager.stop_music()
+		$"UI/HighScoreText".hide()
 		$"Screen Fade/AnimationPlayer".play("Fade")
 		await $"Screen Fade/AnimationPlayer".animation_finished
 		$"Screen Fade/AnimationPlayer".play_backwards("Fade")
