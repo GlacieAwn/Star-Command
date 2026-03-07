@@ -1,6 +1,6 @@
 extends Node
 
-var splash_done: bool = true
+var splash_done: bool = false
 var title_scene_loaded: bool = false
 var gameplay_loaded: bool = false
 var cur = 0
